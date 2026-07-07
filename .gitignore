@@ -19,6 +19,7 @@ vendor
 .sass-cache
 screen-*.css*
 *-*.js
+!scripts/*.js
 ansible/roles/City-of-Bloomington.*
 ansible/*.retry
 
