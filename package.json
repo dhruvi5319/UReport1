@@ -57,5 +57,8 @@
     "playwright": "^1.47.0",
     "@playwright/test": "^1.47.0",
     "shadcn": "latest"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   }
 }
