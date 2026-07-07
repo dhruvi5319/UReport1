@@ -3,14 +3,14 @@ pivota_spec_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 01-k8s-scaffold-data-foundation-02-PLAN.md
-last_updated: "2026-07-07T19:54:42.587Z"
-last_activity: "2026-07-07 — Plan 01-01 complete: Next.js 15 scaffold, Prisma singleton, boot entrypoint"
+stopped_at: Completed 01-k8s-scaffold-data-foundation-03-PLAN.md
+last_updated: "2026-07-07T20:22:26.773Z"
+last_activity: "2026-07-07 — Plan 01-02 complete: Full Prisma schema, 3 migration files, FTS triggers, seed data"
 progress:
   total_phases: 7
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 8
-  completed_plans: 2
+  completed_plans: 3
   percent: 25
 ---
 
@@ -52,6 +52,7 @@ Progress: [███░░░░░░░] 25%
 - Trend: stable
 
 *Updated after each plan completion*
+| Phase 01-k8s-scaffold-data-foundation P03 | 3 min | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -70,6 +71,8 @@ Recent decisions affecting current work:
 - [Phase 01-k8s-scaffold-data-foundation]: infrastructure.json declares postgres sidecar at port 3000 for Pivota K8s platform
 - [Phase 01-k8s-scaffold-data-foundation]: search_vector tsvector NOT in Prisma schema — managed by trigger migration SQL to avoid unsupported type errors
 - [Phase 01-k8s-scaffold-data-foundation]: PostGIS conditional DO $$ block in migration — safe no-op on plain Postgres 16; geog column only added when postgis extension present
+- [Phase 01-k8s-scaffold-data-foundation]: PostGIS detection uses pg client directly in boot script (not Prisma) — avoids full ORM bootstrap cost at startup
+- [Phase 01-k8s-scaffold-data-foundation]: GEO_MODE stored on globalThis to survive Next.js hot-module replacement in dev
 
 ### Pending Todos
 
@@ -81,6 +84,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-07-07T19:54:42.585Z
-Stopped at: Completed 01-k8s-scaffold-data-foundation-02-PLAN.md
+Last session: 2026-07-07T20:22:26.772Z
+Stopped at: Completed 01-k8s-scaffold-data-foundation-03-PLAN.md
 Resume file: None
