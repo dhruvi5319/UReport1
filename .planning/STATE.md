@@ -1,3 +1,19 @@
+---
+pivota_spec_state_version: 1.0
+milestone: v1.0
+milestone_name: milestone
+status: executing
+stopped_at: Completed 01-k8s-scaffold-data-foundation-03-PLAN.md
+last_updated: "2026-07-07T20:22:26.773Z"
+last_activity: "2026-07-07 — Plan 01-02 complete: Full Prisma schema, 3 migration files, FTS triggers, seed data"
+progress:
+  total_phases: 7
+  completed_phases: 1
+  total_plans: 8
+  completed_plans: 3
+  percent: 25
+---
+
 # Project State
 
 ## Project Reference
@@ -10,30 +26,33 @@ See: .planning/PROJECT.md (updated 2026-07-06)
 ## Current Position
 
 Phase: 1 of 7 (K8s Scaffold & Data Foundation)
-Plan: 0 of 3 in current phase
-Status: Ready to plan
-Last activity: 2026-07-06 — Roadmap created; all 59 v1 requirements mapped across 7 phases
+Plan: 2 of 3 in current phase (01-01, 01-02 complete)
+Status: In progress
+Last activity: 2026-07-07 — Plan 01-02 complete: Full Prisma schema, 3 migration files, FTS triggers, seed data
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [███░░░░░░░] 25%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 0
-- Average duration: —
-- Total execution time: 0 hours
+
+- Total plans completed: 2
+- Average duration: 7.5 min
+- Total execution time: 0.25 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| - | - | - | - |
+| 01-k8s-scaffold-data-foundation | 2/3 | 15 min | 7.5 min |
 
 **Recent Trend:**
-- Last 5 plans: —
-- Trend: —
+
+- Last 5 plans: 01-01 (5 min), 01-02 (10 min)
+- Trend: stable
 
 *Updated after each plan completion*
+| Phase 01-k8s-scaffold-data-foundation P03 | 3 min | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -47,6 +66,13 @@ Recent decisions affecting current work:
 - [Init]: Postgres FTS (tsvector+GIN) replaces Solr — eliminates second stateful service
 - [Init]: PostGIS as enhancement, not hard dep — graceful Haversine fallback
 - [Init]: Auth.js credentials provider (no OAuth) — three roles: public/staff/admin
+- [Phase 01-k8s-scaffold-data-foundation]: No X-Frame-Options in next.config.ts — Pivota Preview embeds app in iframe
+- [Phase 01-k8s-scaffold-data-foundation]: next-auth@beta used (^5.0.0 doesn't match pre-release beta tags)
+- [Phase 01-k8s-scaffold-data-foundation]: infrastructure.json declares postgres sidecar at port 3000 for Pivota K8s platform
+- [Phase 01-k8s-scaffold-data-foundation]: search_vector tsvector NOT in Prisma schema — managed by trigger migration SQL to avoid unsupported type errors
+- [Phase 01-k8s-scaffold-data-foundation]: PostGIS conditional DO $$ block in migration — safe no-op on plain Postgres 16; geog column only added when postgis extension present
+- [Phase 01-k8s-scaffold-data-foundation]: PostGIS detection uses pg client directly in boot script (not Prisma) — avoids full ORM bootstrap cost at startup
+- [Phase 01-k8s-scaffold-data-foundation]: GEO_MODE stored on globalThis to survive Next.js hot-module replacement in dev
 
 ### Pending Todos
 
@@ -58,6 +84,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-07-06
-Stopped at: Roadmap written; REQUIREMENTS.md traceability updated; ready to plan Phase 1
+Last session: 2026-07-07T20:22:26.772Z
+Stopped at: Completed 01-k8s-scaffold-data-foundation-03-PLAN.md
 Resume file: None
